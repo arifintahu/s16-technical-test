@@ -21,8 +21,8 @@ User.init(
         password: {
             type: DataTypes.STRING
         },
-        role_id: {
-            type: DataTypes.INTEGER
+        role: {
+            type: DataTypes.STRING
         },
         created_at: {
             type: DataTypes.DATE,
@@ -36,7 +36,7 @@ User.init(
         }
     },
     {
-        modelName: 'user',
+        modelName: 'users',
         freezeTableName: true,
         createdAt: false,
         updatedAt: false,

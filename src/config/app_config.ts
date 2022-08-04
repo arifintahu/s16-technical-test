@@ -11,7 +11,7 @@ const AppConfig = {
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         name: process.env.DB_NAME,
-        port: parseInt(<string>process.env.DB_PORT, 10) || 5432,
+        port: parseInt(<string>process.env.DB_PORT, 10) || 3306,
         is_log: process.env.DB_LOG === 'true'
     }
 };
