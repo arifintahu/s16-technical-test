@@ -12,6 +12,7 @@ const AppConfig = {
         password: process.env.DB_PASSWORD,
         name: process.env.DB_NAME,
         port: parseInt(<string>process.env.DB_PORT, 10) || 3306,
+        dialect: process.env.DB_DIALECT,
         is_log: process.env.DB_LOG === 'true'
     }
 };

@@ -52,7 +52,7 @@ class UserController {
 
     async deleteUser(req: Request, res: Response, next: NextFunction) {
         try {
-            await UserService.deleteUser(req.params.id);
+            await UserService.deleteUser(req.params.id, req.params.userdata);
             res.json({
                 message: 'Successfully delete user'
             });

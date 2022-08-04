@@ -12,7 +12,7 @@ export const db: Sequelize = new Sequelize(
     AppConfig.database.password,
     {
         host: AppConfig.database.host,
-        dialect: 'postgres',
+        dialect: <any>AppConfig.database.dialect,
         logging: AppConfig.database.is_log ? customLog : false
     }
 );

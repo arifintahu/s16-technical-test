@@ -49,7 +49,10 @@ class UserService {
         return UserRepo.getUserDetail(userId);
     }
 
-    async deleteUser(userId: any) {
+    async deleteUser(userId: any, userdata: any) {
+        if (userdata.role !== 'admin') {
+            throw new Error('Only admin can delete');
+        }
         return UserRepo.deleteUser(userId);
     }
 }
