@@ -2,6 +2,18 @@ import { Request, Response, NextFunction } from 'express';
 import UserService from '../../services/user';
 
 class UserController {
+    async login(req: Request, res: Response, next: NextFunction) {
+        try {
+            const result = await UserService.login(req.body);
+            res.json({
+                message: 'Successfully login',
+                data: result
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
     async createUser(req: Request, res: Response, next: NextFunction) {
         try {
             const result = await UserService.createUser(req.body);
@@ -43,6 +55,17 @@ class UserController {
             await UserService.deleteUser(req.params.id);
             res.json({
                 message: 'Successfully delete user'
+            });
+        } catch (error) {
+            next(error);
+        }
+    }
+
+    async getCurrentUser(req: Request, res: Response, next: NextFunction) {
+        try {
+            res.json({
+                message: 'Successfully get current user',
+                data: req.params.userdata
             });
         } catch (error) {
             next(error);

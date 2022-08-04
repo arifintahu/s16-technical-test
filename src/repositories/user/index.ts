@@ -20,6 +20,14 @@ class UserRepo {
             }
         });
     }
+
+    async getUserByEmail(email: string): Promise<any> {
+        return User.findOne({
+            where: {
+                email: email
+            }
+        });
+    }
 }
 
 export default new UserRepo();
