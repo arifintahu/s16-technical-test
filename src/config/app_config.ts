@@ -1,6 +1,7 @@
 const AppConfig = {
     application: {
         name: process.env.APP_NAME,
+        server: process.env.SERVER,
         port: parseInt(<string>process.env.PORT, 10) || 3000,
         api: process.env.API || 'api',
         secret: process.env.JWT_SECRET || 'j!89nKO5as&Js'
