@@ -7,9 +7,6 @@ export function createServer(): Application {
 
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
-    // app.use(cors(corsOption));
-    // app.use(compression());
-    // app.use(morganMiddleware);
     app.use(`/api`, routes);
 
     return app;
